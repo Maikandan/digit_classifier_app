@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C4EDFC"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/roughView"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/firstNumber"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="0"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                android:gravity = "center_vertical|left|start"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/plusSign"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="+"
+                android:textAlignment="center"
+                android:textColor="#1976D2"
+                android:textSize="45sp"
+                android:gravity = "center_vertical|left|start"/>
+
+            <TextView
+                android:id="@+id/secondNumber"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="8"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                android:gravity = "center_vertical|left|start"/>
+        </LinearLayout>
+
+        <com.divyanshu.draw.widget.DrawView
+            android:id="@+id/draw_view"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="99dp" />
+
+
+
+        <TextView
+            android:id="@+id/predicted_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/prediction_text_placeholder"
+            android:textAlignment="center"
+            android:textSize="0sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/detect"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="invisible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="413dp"
+        android:layout_height="103dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/clear_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@layout/rounded_corner_imagebutton"
+            android:text="Clear"
+            android:textSize="18sp"
+            app:backgroundTint="#FCAA17" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/detect"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@layout/rounded_corner_imagebutton"
+            android:elevation="2dp"
+            android:stateListAnimator="@layout/anim"
+            app:srcCompat="@drawable/arrowrightsolid" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
